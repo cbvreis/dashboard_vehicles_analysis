@@ -9,7 +9,7 @@ class Database:
         self.cursor = None
 
     def connect(self):
-        self.connection = sqlite3.connect(r"db2.db")
+        self.connection = sqlite3.connect(r"C:\Users\cassi\Desktop\CASSIO\05 - FORD\EL_VE-21-15_v1\db2.db")
         self.cursor = self.connection.cursor()
         self.cursor.execute('PRAGMA foreign_keys = ON')
         self.connection.commit()
@@ -67,9 +67,9 @@ class Database:
         sql = """SELECT  * FROM decode d JOIN trips T ON D.vin_cd = T.Cod_Vin """
         return pd.read_sql(sql, self.connection)
 
-    def read_pandas_consumo(self):
-        sql = """SELECT  * FROM decode d JOIN consumos C ON D.vin_cd = C.Cod_Vin """
-        return pd.read_sql(sql, self.connection)
+    #def read_pandas_consumo(self):
+    #    sql = """SELECT  * FROM decode d JOIN consumos C ON D.vin_cd = C.Cod_Vin """
+    #    return pd.read_sql(sql, self.connection)
 
     def is_connected(self):
         return self.connection is not None

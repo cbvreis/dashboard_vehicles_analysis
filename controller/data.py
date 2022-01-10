@@ -10,5 +10,6 @@ def load_data():
     data_base = Database()
     data_base.connect()
     df = data_base.read_pandas()
-    df_cons = data_base.read_pandas_consumo()
-    return df,df_cons
+    #df_cons = data_base.read_pandas_consumo()
+    #return df,df_cons
+    return df
